@@ -9,3 +9,4 @@ pic includes some pictures for forum
 writecode includes codes for problems on leetcode.cn
 
 build this to record my learning porcess on leetcode.cn, and be famililar with github.This is my first repository on github. 
+--@tjujingzong
