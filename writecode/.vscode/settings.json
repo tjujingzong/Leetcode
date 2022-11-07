@@ -9,6 +9,11 @@
     "utility": "cpp",
     "valarray": "cpp",
     "vector": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "ratio": "cpp",
+    "deque": "cpp",
+    "functional": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp"
   }
 }
