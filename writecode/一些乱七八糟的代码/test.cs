@@ -1,0 +1,1 @@
+num2 = (int)array[index2] - (int)byte.MaxValue - 1;
