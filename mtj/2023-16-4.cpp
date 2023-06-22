@@ -9,7 +9,7 @@ int main() {
     for (int j = 1; j <= m; j++)
       cin >> a[i][j];
   int dp[n + 2][m + 2][mod + 2];
-  memset(dp, 0, sizeof(dp));
+  memset(dp, -0x3f3f3f3f, sizeof(dp));
   dp[0][0][0] = 0;
   for (int i = 1; i <= n; i++)
     for (int j = 1; j <= m; j++) {
@@ -24,6 +24,7 @@ int main() {
           dp[i][k + 1][(l + a[i][j]) % mod] =
               max(dp[i][k + 1][(l + a[i][j]) % mod], dp[i][k][l] + a[i][j]);
     }
+  int ans = 0;
   for (int j = 0; j <= m / 2; j++)
     ans = max(ans, dp[n][j][0]);
   cout << ans;
