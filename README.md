@@ -43,3 +43,42 @@ map与unordered_map
 ```
 double rounded_avg = round(avg * 10.0) / 10.0; 
 ```
+
+### 2023-9-13 重温AVL树 感觉当时就没学明白
+
+AVL树的英文全称是"Adelson-Velsky and Landis tree"，即"Adelson-Velsky 和 Landis 树"。这种树是以其发明者 Georgy Adelson-Velsky 和 Evgenii Landis 的名字命名的，他们在1962年首次提出了这一自平衡二叉搜索树的概念。
+
+插入类型：
+
+- LL插入（左子树的左子树插入）：当在AVL树的左子树的左子树中插入新节点时，可能会导致不平衡。解决方法是进行一次右旋转。
+
+- LR插入（左子树的右子树插入）：当在AVL树的左子树的右子树中插入新节点时，可能会导致不平衡。解决方法是先进行一次左旋转，然后再进行一次右旋转。
+
+- RR插入（右子树的右子树插入）：当在AVL树的右子树的右子树中插入新节点时，可能会导致不平衡。解决方法是进行一次左旋转。
+
+- RL插入（右子树的左子树插入）：当在AVL树的右子树的左子树中插入新节点时，可能会导致不平衡。解决方法是先进行一次右旋转，然后再进行一次左旋转。
+
+
+
+```
+\\右旋操作
+TreeNode* rightRotate(TreeNode* root) {
+  TreeNode* newRoot = root->left;
+  root->left = newRoot->right;
+  newRoot->right = root;
+  updateHeight(root);
+  updateHeight(newRoot);
+  return newRoot;
+}
+// 平衡维护
+ if (balance > 1) {
+    if (val < root->left->val) {
+      return rightRotate(root);
+    }
+    if (val > root->left->val) {
+      root->left = leftRotate(root->left);
+      return rightRotate(root);
+    }
+  }
+```
+![Alt text](.\pic\image.png)
