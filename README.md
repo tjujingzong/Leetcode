@@ -11,9 +11,9 @@ writecode includes some codes for problems on leetcode.cn
 build this to record my learning porcess on leetcode.cn, and be famililar with github.This is my first repository on github. 
 --@tjujingzong
 
-# 2022 小结如下
+### 2022 小结如下
 
-![](./pic/2022.png)
+<img src="./pic/2022.png" style="zoom:50%;" />
 
 原本打算在2022结束前，写点东西，总结一下这一年在Leetcode上学到的点东西，结果被可视化这呆瓜课给耽误了，1.8之后，陆陆续续写点总结，包括课程的，还有Leetcode上以及别的一些心得与体会。
 
@@ -81,4 +81,19 @@ TreeNode* rightRotate(TreeNode* root) {
     }
   }
 ```
-![Alt text](.\pic\image.png)
+![AVL树右旋](./pic/image.png)
+
+### 9-14 
+二叉树假如给了前序遍历和后序遍历 怎么判断树是否唯一？？？？
+
+在这个特定的树构建和判断唯一性的问题中，非叶子节点的左子树和右子树必须同时存在，才能保证树的唯一性。如果一个非叶子节点只有左子树或只有右子树，那么就无法通过给定的前序遍历和后序遍历序列唯一确定一棵二叉树
+```
+  root->left = buildTree(preorder, postorder, prel + 1, prel + left_size, postl,
+                         left_root_idx);
+  root->right = buildTree(preorder, postorder, prel + left_size + 1, prer,
+                          left_root_idx + 1, postr - 1);
+
+  if ((root->left && !root->right) || (!root->left && root->right)) {
+    isUnique = false;
+  }
+```
