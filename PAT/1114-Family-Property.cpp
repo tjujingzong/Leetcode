@@ -34,6 +34,7 @@ int main() {
   int n;
   cin >> n;
   unordered_map<int, pers> mp;
+  set<int> s;
   for (int i = 0; i < 10005; i++) {
     fa[i] = i;
   }
@@ -42,10 +43,16 @@ int main() {
     int k;
     cin >> p.id >> p.fa >> p.ma;
     cin >> k;
+    s.insert(p.id);
+    if (p.fa != -1)
+      s.insert(p.fa);
+    if (p.ma != -1)
+      s.insert(p.ma);
     while (k--) {
       int child;
       cin >> child;
       p.c.push_back(child);
+      s.insert(child);
     }
     cin >> p.n_est >> p.area;
     mp[p.id] = p;
@@ -62,8 +69,7 @@ int main() {
     }
   }
   vector<family> vf;
-  for (auto& it : mp) {
-    int p = it.first;
+  for (const int& p : s) {
     bool addnew = true;
     for (family& f : vf) {
       if (find(f.v.begin(), f.v.end(), p) != f.v.end()) {
