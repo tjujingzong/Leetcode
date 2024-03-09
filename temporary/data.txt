@@ -1,0 +1,5 @@
+1 lihua 90 90 90
+2 zhangsan 85 75 95
+3 wangwu 65 84 79
+4 zhaoliu 86 54 96
+5 chenqi 96 93 66

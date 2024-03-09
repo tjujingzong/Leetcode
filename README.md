@@ -17,7 +17,9 @@ build this to record my learning process on leetcode.cn, and be famililar with g
 
 原本打算在2022结束前，写点东西，总结一下这一年在Leetcode上学到的点东西，结果被可视化这呆瓜课给耽误了，1.8之后，陆陆续续写点总结，包括课程的，还有Leetcode上以及别的一些心得与体会。
 
+### 2023 小结如下
 
+<img src="./pic/README/LeetCode_Rewind_2023.png" alt="LeetCode_Rewind_2023" style="zoom: 25%;" />
 
 ### 2023-9-8 刷PAT有感
 
